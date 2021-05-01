@@ -1,0 +1,8 @@
+.cell-list {
+  margin: 0 25px;
+}
+
+/* this classes is added when we resize */
+.react-draggable-transparent-selection .cell-list {
+  margin-bottom: 100vh;
+}

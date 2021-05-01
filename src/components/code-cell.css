@@ -1,0 +1,29 @@
+.progress-cover {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  /* we want to show this if bundling takes longer. */
+  /* we can apply onyl one animation rule to an element at a time */
+  animation: fadeIn 0.5s;
+}
+.progress-wrapper {
+  background-color: rgb(207, 40, 40);
+  height: 100%;
+  flex-grow: 1;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  /* up to this point this div does not show so background-color will be default bg-color blue. that's why we add another wrapper div */
+  /* it linearly transform after half way from 0 to 1 */
+  100% {
+    opacity: 1;
+  }
+}

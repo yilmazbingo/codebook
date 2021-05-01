@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    // The standard typing to be included in the type checking process.
+    "lib": ["dom", "dom.iterable", "esnext"],
+    // Whether to allow JavaScript files to be compiled.
+    "allowJs": true,
+    //This allows default imports from modules with no default export in the type checking process.
+    "allowSyntheticDefaultImports": true,
+    // Whether to skip type checking of all the type declaration files (*.d.ts).
+    "skipLibCheck": true,
+    // This enables compatibility with Babel.
+    "esModuleInterop": true,
+    "strict": true,
+    // Ensures that the casing of referenced file names is consistent during the type checking process.
+    "forceConsistentCasingInFileNames": true,
+    //  This allows modules to be in .json files which are useful for configuration files.
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "baseUrl": "src",
+    "paths": {
+      "components": ["components/*"]
+    }
+  },
+  "include": ["src"]
+}

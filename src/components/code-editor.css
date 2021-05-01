@@ -1,0 +1,21 @@
+.editor-wrapper {
+  position: relative;
+  height: 100%;
+  /* before width was 100%. when we added horizontal resize handler, which has 10px width, we had no space to add, so it was displaying under the code ditor. but we want it to right */
+  /* width: calc(100%-10px); */
+  width: 100%;
+}
+
+.editor-wrapper .button-format {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 20;
+  opacity: 0;
+  /* change the value of opacity slowly */
+  transition: opacity 0.3s;
+}
+
+.editor-wrapper:hover .button-format {
+  opacity: 1;
+}
