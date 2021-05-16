@@ -13,12 +13,33 @@ export interface CellsState {
 const initialState: CellsState = {
   loading: false,
   error: null,
+  // order of cells. store the id's of cells
   order: [],
   data: {},
 };
 
 const reducer = produce((state: CellsState = initialState, action: Action) => {
   switch (action.type) {
+    case ActionType.SAVE_CELLS_ERROR:
+      state.error = action.payload;
+      return state;
+    case ActionType.FETCH_CELLS:
+      state.loading = true;
+      state.error = null;
+      return state;
+
+    case ActionType.FETCH_CELL_COMPLETE:
+      state.order = action.payload.map((cell) => cell.id);
+      state.data = action.payload.reduce((acc, cell) => {
+        acc[cell.id] = cell;
+        return acc;
+      }, {} as CellsState["data"]);
+      return state;
+
+    case ActionType.FETCH_CELL_ERROR:
+      (state.loading = false), (state.error = action.payload);
+      return state;
+
     case ActionType.UPDATE_CELL:
       const { id, content } = action.payload;
       state.data[id].content = content;

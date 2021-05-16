@@ -1,10 +1,10 @@
-import { Fragment } from "react";
-import CellListItem from "../cell-list-item";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { useSelector } from "react-redux";
 import AddCell from "../add-cell";
 import { RootState } from "../../state/reducers";
 import { CellsState } from "../../state/reducers/cellsReducer";
+import { useActions } from "../../hooks/use-actions";
+import CellListItem from "../cell-list-item";
 import "./cell-list.css";
 
 const CellList: React.FC = () => {
@@ -12,6 +12,12 @@ const CellList: React.FC = () => {
     (state: RootState) => state.cells
   ) as CellsState;
   const cells = cellState?.order.map((id) => cellState.data[id]);
+
+  const { fetchCells, saveCells } = useActions();
+
+  useEffect(() => {
+    fetchCells();
+  }, []);
 
   const renderedCells = cells.map((cell) => (
     // we could not add any prop to <></>

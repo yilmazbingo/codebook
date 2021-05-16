@@ -1,16 +1,33 @@
 {
-  "name": "es-intro",
+  "name": "@js-codebook/client",
   "version": "1.0.0",
   "description": "",
+  "files": [
+    "build"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@types/babel__traverse": "^7.11.0",
+    "@types/jscodeshift": "^0.7.2",
+    "@types/prettier": "^2.2.0",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-resizable": "^1.7.2",
+    "@types/webpack": "^4.41.26",
+    "@types/webpack-dev-server": "^3.11.1",
+    "svg-url-loader": "^7.1.1",
     "@babel/core": "^7.12.13",
     "@babel/parser": "^7.12.15",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
@@ -61,16 +78,5 @@
     "webpack": "^5.21.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2"
-  },
-  "devDependencies": {
-    "@types/babel__traverse": "^7.11.0",
-    "@types/jscodeshift": "^0.7.2",
-    "@types/prettier": "^2.2.0",
-    "@types/react": "^17.0.1",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-resizable": "^1.7.2",
-    "@types/webpack": "^4.41.26",
-    "@types/webpack-dev-server": "^3.11.1",
-    "svg-url-loader": "^7.1.1"
   }
 }
