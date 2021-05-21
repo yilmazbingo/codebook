@@ -1,7 +1,6 @@
 import path from "path";
-import program,{ Command }from "commander";
+import program, { Command } from "commander";
 import { serve } from "@js-codebook/local-api";
-
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -12,7 +11,7 @@ export const serveCommand = new Command()
   // when user enters node index.js --help, it sees description
   .description("Open a file for editing")
   .option("-p, --port <number>", "port to run server on", "4005")
-  ..option('-v, --version', 'show version', program.version, '')
+  .option("-v, --version", "show version", program.version, "")
   // first arg will be the arg that passed in command()
   // second arg is all other options
   .action(async (filename = "codes/codebook.js", options: { port: string }) => {
