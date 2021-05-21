@@ -13,7 +13,7 @@ export const serveCommand = new Command()
   .option("-p, --port <number>", "port to run server on", "4005")
   // first arg will be the arg that passed in command()
   // second arg is all other options
-  .action(async (filename = "codebook.js", options: { port: string }) => {
+  .action(async (filename = "codes/codebook.js", options: { port: string }) => {
     // console.log(path.join(process.cwd()), path.dirname(filename));
     // console.log(path.basename(filename));
     try {
