@@ -1,4 +1,5 @@
 import path from "path";
+import fs from "fs";
 import { Command } from "commander";
 import { serve } from "@js-codebook/local-api";
 import { version } from "../lib";
@@ -21,6 +22,15 @@ export const serveCommand = new Command()
     try {
       const dir = path.join(process.cwd(), path.dirname(filename));
       // if we are on production, we are not going to use proxy. !isProduction will be false
+      if (!dir) {
+        fs.mkdir("./new-directory-name", function (err) {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log("New directory successfully created.");
+          }
+        });
+      }
       await serve(
         parseInt(options.port),
         path.basename(filename),

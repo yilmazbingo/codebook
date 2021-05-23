@@ -41,6 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.serveCommand = void 0;
 var path_1 = __importDefault(require("path"));
+var fs_1 = __importDefault(require("fs"));
 var commander_1 = require("commander");
 var local_api_1 = require("@js-codebook/local-api");
 var lib_1 = require("../lib");
@@ -65,9 +66,18 @@ exports.serveCommand = new commander_1.Command()
                     _a.trys.push([0, 2, , 3]);
                     dir = path_1.default.join(process.cwd(), path_1.default.dirname(filename));
                     // if we are on production, we are not going to use proxy. !isProduction will be false
+                    if (!dir) {
+                        fs_1.default.mkdir("./new-directory-name", function (err) {
+                            if (err) {
+                                console.log(err);
+                            }
+                            else {
+                                console.log("New directory successfully created.");
+                            }
+                        });
+                    }
                     return [4 /*yield*/, local_api_1.serve(parseInt(options.port), path_1.default.basename(filename), dir, !isProduction)];
                 case 1:
-                    // if we are on production, we are not going to use proxy. !isProduction will be false
                     _a.sent();
                     console.log("Opened " + filename + ". Navigate to http://localhost:" + options.port + " to edit the file");
                     return [3 /*break*/, 3];

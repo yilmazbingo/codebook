@@ -1,1 +1,1 @@
-[{"content":"","type":"code","id":"r27en"}]
+[{"content":"console.log(\"dadf\")","type":"code","id":"r27en"}]

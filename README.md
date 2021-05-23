@@ -7,3 +7,9 @@
 `js-codebook serve [filename]`
 
 - Default file name is codebook.js
+
+**Define a custom path**
+
+`js-codebook serve notes/codebook.js`
+
+- Directory name and file must exist.
