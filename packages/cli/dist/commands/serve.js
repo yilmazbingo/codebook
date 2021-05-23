@@ -67,7 +67,7 @@ exports.serveCommand = new commander_1.Command()
                     dir = path_1.default.join(process.cwd(), path_1.default.dirname(filename));
                     // if we are on production, we are not going to use proxy. !isProduction will be false
                     if (!dir) {
-                        fs_1.default.mkdir("./new-directory-name", function (err) {
+                        fs_1.default.mkdir("" + dir, function (err) {
                             if (err) {
                                 console.log(err);
                             }
