@@ -22,15 +22,21 @@ export const serveCommand = new Command()
     try {
       const dir = path.join(process.cwd(), path.dirname(filename));
       // if we are on production, we are not going to use proxy. !isProduction will be false
+      console.log("filename", filename);
       if (!dir) {
         fs.mkdir(`${dir}`, function (err) {
           if (err) {
             console.log(err);
           } else {
             console.log("New directory successfully created.");
+            fs.open(`${filename}`, "w", function (err, file) {
+              if (err) throw err;
+              console.log("File is opened in write mode.");
+            });
           }
         });
       }
+
       await serve(
         parseInt(options.port),
         path.basename(filename),

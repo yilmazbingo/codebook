@@ -66,6 +66,7 @@ exports.serveCommand = new commander_1.Command()
                     _a.trys.push([0, 2, , 3]);
                     dir = path_1.default.join(process.cwd(), path_1.default.dirname(filename));
                     // if we are on production, we are not going to use proxy. !isProduction will be false
+                    console.log("filename", filename);
                     if (!dir) {
                         fs_1.default.mkdir("" + dir, function (err) {
                             if (err) {
@@ -73,6 +74,11 @@ exports.serveCommand = new commander_1.Command()
                             }
                             else {
                                 console.log("New directory successfully created.");
+                                fs_1.default.open("" + filename, "w", function (err, file) {
+                                    if (err)
+                                        throw err;
+                                    console.log("File is opened in write mode.");
+                                });
                             }
                         });
                     }
