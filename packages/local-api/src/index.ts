@@ -41,5 +41,5 @@ export const serve = (
   return new Promise<void>((resolve, reject) => {
     //on is used to add a callback function that's going to be executed when the event is triggered
     app.listen(port, resolve).on("error", reject);
-  });
+  }).catch((error) => console.log("catch in new promise serve", error));
 };

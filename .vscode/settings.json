@@ -1,0 +1,6 @@
+{
+  "terminal.integrated.automationShell.linux": "",
+  "terminal.integrated.env.linux": {
+    "PATH": "/opt/firefox/firefox:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/opt/firefox/firefox:/home/tesla/anaconda3/bin:/home/tesla/anaconda3/condabin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/snap/bin"
+  }
+}

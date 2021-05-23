@@ -43,6 +43,7 @@ exports.serveCommand = void 0;
 var path_1 = __importDefault(require("path"));
 var commander_1 = require("commander");
 var local_api_1 = require("@js-codebook/local-api");
+var lib_1 = require("../lib");
 var isProduction = process.env.NODE_ENV === "production";
 //[] indicates that this is optional
 // <> indicates that this is a required value
@@ -51,6 +52,7 @@ exports.serveCommand = new commander_1.Command()
     // when user enters node index.js --help, it sees description
     .description("Open a file for editing")
     .option("-p, --port <number>", "port to run server on", "4005")
+    .option("-v, --version", "show version", lib_1.version, "")
     // first arg will be the arg that passed in command()
     // second arg is all other options
     .action(function (filename, options) {

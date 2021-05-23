@@ -37,6 +37,6 @@ var serve = function (port, filename, dir, useProxy) {
     return new Promise(function (resolve, reject) {
         //on is used to add a callback function that's going to be executed when the event is triggered
         app.listen(port, resolve).on("error", reject);
-    });
+    }).catch(function (error) { return console.log("catch in new promise serve", error); });
 };
 exports.serve = serve;
