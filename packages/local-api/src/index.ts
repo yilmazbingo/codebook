@@ -2,7 +2,6 @@ import path from "path";
 import express from "express";
 import { createProxyMiddleware } from "http-proxy-middleware";
 import { createCellsRouter } from "./routes/cells";
-import open from "open";
 
 // browser will make request to local api to get the react files. we are building proxy inside local api
 //
@@ -42,6 +41,5 @@ export const serve = (
   return new Promise<void>((resolve, reject) => {
     //on is used to add a callback function that's going to be executed when the event is triggered
     app.listen(port, resolve).on("error", reject);
-    open("http://localhost:4500");
   }).catch((error) => console.log("catch in new promise serve", error));
 };
