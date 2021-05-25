@@ -1,6 +1,6 @@
 {
   "name": "js-codebook",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "files": [
     "dist"
@@ -20,7 +20,7 @@
     "@js-codebook/client": "^1.0.5"
   },
   "devDependencies": {
-    "@js-codebook/local-api": "^1.0.5",
+    "@js-codebook/local-api": "^1.0.8",
     "@types/node": "^15.0.1",
     "commander": "^7.2.0",
     "esbuild": "^0.11.22",
