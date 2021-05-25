@@ -17,7 +17,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@js-codebook/client": "^1.0.5"
+    "@js-codebook/client": "^1.0.5",
+    "open": "^8.2.0"
   },
   "devDependencies": {
     "@js-codebook/local-api": "^1.0.8",

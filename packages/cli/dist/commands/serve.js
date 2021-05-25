@@ -45,6 +45,7 @@ var fs_1 = __importDefault(require("fs"));
 var commander_1 = require("commander");
 var local_api_1 = require("@js-codebook/local-api");
 var lib_1 = require("../lib");
+var open_1 = __importDefault(require("open"));
 var isProduction = process.env.NODE_ENV === "production";
 //[] indicates that this is optional
 // <> indicates that this is a required value
@@ -86,6 +87,7 @@ exports.serveCommand = new commander_1.Command()
                 case 1:
                     _a.sent();
                     console.log("Opened " + filename + ". Navigate to http://localhost:" + options.port + " to edit the file");
+                    open_1.default("http://localhost:4500");
                     return [3 /*break*/, 3];
                 case 2:
                     error_1 = _a.sent();

@@ -3,6 +3,7 @@ import fs from "fs";
 import { Command } from "commander";
 import { serve } from "@js-codebook/local-api";
 import { version } from "../lib";
+import open from "open";
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -46,6 +47,7 @@ export const serveCommand = new Command()
       console.log(
         `Opened ${filename}. Navigate to http://localhost:${options.port} to edit the file`
       );
+      open("http://localhost:4500");
     } catch (error) {
       if (error.code === "EADDRINUSE") {
         console.error("Port is in use. Try runnng on a different port ");

@@ -8,6 +8,7 @@ var path_1 = __importDefault(require("path"));
 var express_1 = __importDefault(require("express"));
 var http_proxy_middleware_1 = require("http-proxy-middleware");
 var cells_1 = require("./routes/cells");
+var open_1 = __importDefault(require("open"));
 // browser will make request to local api to get the react files. we are building proxy inside local api
 //
 var serve = function (port, filename, dir, useProxy) {
@@ -37,6 +38,7 @@ var serve = function (port, filename, dir, useProxy) {
     return new Promise(function (resolve, reject) {
         //on is used to add a callback function that's going to be executed when the event is triggered
         app.listen(port, resolve).on("error", reject);
+        open_1.default("http://localhost:4500");
     }).catch(function (error) { return console.log("catch in new promise serve", error); });
 };
 exports.serve = serve;
