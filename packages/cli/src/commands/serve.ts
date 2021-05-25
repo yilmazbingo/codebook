@@ -45,7 +45,7 @@ export const serveCommand = new Command()
         !isProduction
       );
       console.log(
-        `Opened ${filename}. Navigate to http://localhost:${options.port} to edit the file`
+        `Opened ${filename}. Navigating to http://localhost:${options.port}`
       );
       open("http://localhost:4005");
     } catch (error) {
