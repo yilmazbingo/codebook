@@ -86,8 +86,8 @@ exports.serveCommand = new commander_1.Command()
                     return [4 /*yield*/, local_api_1.serve(parseInt(options.port), path_1.default.basename(filename), dir, !isProduction)];
                 case 1:
                     _a.sent();
-                    console.log("Opened " + filename + ". Navigate to http://localhost:" + options.port + " to edit the file");
-                    open_1.default("http://localhost:4500");
+                    console.log("Opened " + filename + ". Navigating to http://localhost:" + options.port);
+                    open_1.default("http://localhost:4005");
                     return [3 /*break*/, 3];
                 case 2:
                     error_1 = _a.sent();
