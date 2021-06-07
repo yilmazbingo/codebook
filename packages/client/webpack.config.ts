@@ -4,10 +4,14 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import MonacoWebpackPlugin from "monaco-editor-webpack-plugin";
 import webpack from "webpack";
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const CopyWebpackPlugin = require("copy-webpack-plugin");
-// const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 
+import WebpackDevServer from "webpack-dev-server";
+
+declare module "webpack" {
+	interface Configuration {
+		devServer?: WebpackDevServer.Configuration;
+	}
+}
 const config: webpack.Configuration = {
   mode: "development",
   target: "web",
