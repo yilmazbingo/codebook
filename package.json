@@ -3,9 +3,15 @@
   "private": true,
   "scripts": {
     "start": "lerna run start --parallel",
-    "postinstall": "lerna bootstrap"
+    "postinstall": "lerna bootstrap",
+    "publish": "lerna publish --no-push"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.3",
+    "assert": "^2.0.0",
+    "constants-browserify": "^1.0.0"
   }
 }

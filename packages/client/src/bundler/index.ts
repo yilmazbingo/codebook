@@ -13,7 +13,7 @@ const bundle = async (rawCode: string) => {
       worker: true,
       // wasmURL: "/assets/esbuild.wasm",
       // instead of getting file from node_modules, we import
-      wasmURL: "https://unpkg.com/esbuild-wasm@0.8.42/esbuild.wasm",
+      wasmURL: "https://unpkg.com/esbuild-wasm@0.8.57/esbuild.wasm",
     });
   }
 

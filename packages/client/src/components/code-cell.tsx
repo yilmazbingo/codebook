@@ -16,6 +16,7 @@ interface CodeCellProps {
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const { updateCell, createBundle } = useActions();
   const bundle = useSelector((state: RootState) => state.bundles[cell.id]);
+  console.log("bundle", bundle);
   const cumulativeCode = useCumulativeHook(cell.id);
   // initially bundle is undefined. If we added it to dependency array, when we get bundle, it would
   useEffect(() => {
@@ -53,7 +54,10 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
         <div className="progress-wrapper">
           {!bundle || bundle.loading ? (
             <div className="progress-cover">
-              <progress className="progress is-small is-primary" max="100">
+              <progress
+                className="progress is-small is-primary white"
+                max="100"
+              >
                 Loading
               </progress>
             </div>
